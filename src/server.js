@@ -1,4 +1,5 @@
 const express = require('express');
+const limiter = require('./models/rate-limit');
 
 const connectDatabase = require('./config/database');
 const Pessoa = require('./models/Pessoa');
@@ -7,6 +8,8 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+
+app.use(limiter);
 
 app.get('/', (req, res) => {
   res.json({ mensagem: 'API REST em Node.js com Express.' });
