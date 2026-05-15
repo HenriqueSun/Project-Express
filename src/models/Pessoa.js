@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const pessoaSchema = new mongoose.Schema(
+const pessoasSchema = new mongoose.Schema(
     {
         nome: {
           type: String,
@@ -19,4 +19,4 @@ const pessoaSchema = new mongoose.Schema(
 
 )
 
-module.exports = mongoose.model('Pessoa', pessoaSchema, 'pessoas');
+module.exports = mongoose.model('Pessoa', pessoasSchema, 'pessoas');
